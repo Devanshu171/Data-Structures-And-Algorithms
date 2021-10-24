@@ -38,12 +38,20 @@ int Count(Node *k)
     }
     return count;
 }
+
+int Rcount(int c,Node *k)
+{
+    if(k==NULL)
+    return c;
+
+    Rcount(c+1,k=k->next);
+}
 int main()
 {
     int a[] = {1, 2, 3, 4, 5, 6, 7};
     Create(a, 7);
 
-    cout << Count(P);
+    cout << Rcount(0,P);
     return 0;
 
 return 0;
