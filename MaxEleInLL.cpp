@@ -38,13 +38,21 @@ int maxElement(Node *k)
     }
     return maxi;
 }
+// recursive method
+int RmaxElement(int maxi,Node *k)
+{
+   if(k==NULL)
+   return maxi;
+   maxi=max(maxi,k->data);
+   RmaxElement(maxi,k=k->next);
+    
+}
 int main()
 {
     int a[] = {1,-2, 3, 4, 95, 60, 7};
     Create(a, 7);
 
-    cout << maxElement(P);
-    return 0;
+    cout << RmaxElement(-100000,P);
 
     return 0;
 }
