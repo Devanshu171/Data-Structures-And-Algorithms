@@ -1,0 +1,2 @@
+   cout<<"Already sorted";
+        break;
