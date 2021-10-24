@@ -25,18 +25,28 @@ void create(int a[],int n)
 }
 
 int Search(Node *k,int x)
-{  int count=0;
+ {  //int count=0;
     while(k!=NULL){
-        count++;
+        // count++;
         if(k->data==x)
-        return count;
+        return x;
         k=k->next;
     }
     return -1;
 }
+
+int Rsearch(Node *k,int x)
+{
+    if(k==NULL)
+    return -1;
+
+    if(k->data==x)
+    return x;
+    Rsearch(k=k->next,x);
+}
 int main(){
     int a[]={1,3,6,2,47,33,90,13,16};
     create(a,9);
-cout<<Search(P,6);
+cout<<Rsearch(P,600);
     return 0;
 }
