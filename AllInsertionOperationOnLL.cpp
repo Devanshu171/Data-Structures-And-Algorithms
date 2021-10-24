@@ -44,6 +44,10 @@ void insert(Node *k, int n, int x)
     l->next = NULL;
     int ind = 0;
 
+    if(n<1) {
+    cout<<"invalid insertion position"<<endl;
+    return;
+    }
     if (n == 1) // inserting a head
     {
         l->next = P; // make node l pointing to p and p pointing to l
@@ -94,7 +98,7 @@ int main()
     int a[] = {1, 2, 3, 5, 6};
     Create(a, 5);
     display(P);
-    insert(P, len(P), 10000);
+    insert(P, -1, 10000);
     display(P);
     return 0;
 }
