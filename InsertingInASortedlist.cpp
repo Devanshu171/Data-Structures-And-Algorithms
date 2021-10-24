@@ -34,6 +34,10 @@ void InsertSorted(Node *k,int x)
     temp->data=x;
     temp->next=NULL;
 
+    if(k==NULL){ // if list is empty
+    P=temp;
+    return;
+        }
     if(x<k->data) //is x is smallest element
     {
         temp->next=P;
@@ -66,7 +70,7 @@ void Display(Node *k)
 }
 int main(){
     int a[]={1,2,3,5,6,7};
-    Create(a,6);
+    // Create(a,6);
     InsertSorted(P,0);
     InsertSorted(P,5);
     InsertSorted(P,401);
