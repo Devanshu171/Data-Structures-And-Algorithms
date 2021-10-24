@@ -38,19 +38,19 @@ int len(Node *k)
 }
 void insert(Node *k, int n, int x)
 {
-    Node *l;    // creating a new node that need to be inserted
+    Node *l; // creating a new node that need to be inserted
     l = new Node;
     l->data = x;
     l->next = NULL;
     int ind = 0;
 
-    if (n == 1)             // inserting a head 
+    if (n == 1) // inserting a head
     {
-        l->next = P;  // make node l pointing to p and p pointing to l
+        l->next = P; // make node l pointing to p and p pointing to l
         P = l;
         return;
     }
-    else if (n == len(P))  // inseting at tail of LL
+    else if (n == len(P)) // inseting at tail of LL
     {
 
         while (k != NULL)
@@ -58,7 +58,7 @@ void insert(Node *k, int n, int x)
             ind++;
             if (ind == n)
             {
-                k->next = l;    // just make last node point to l
+                k->next = l; // just make last node point to l
                 return;
             }
             k = k->next;
@@ -66,13 +66,13 @@ void insert(Node *k, int n, int x)
     }
     else
     {
-        while (k != NULL)   // inserting in b/w
+        while (k != NULL) // inserting in b/w
         {
             ind++;
             if (ind == n - 1)
             {
-                l->next = k->next;     // K pointing to 1 node back to the insereting position
-                k->next = l;         //  make new node point to the node k was pointing and make k point to new node
+                l->next = k->next; // K pointing to 1 node back to the insereting position
+                k->next = l;       //  make new node point to the node k was pointing and make k point to new node
                 return;
             }
             k = k->next;
