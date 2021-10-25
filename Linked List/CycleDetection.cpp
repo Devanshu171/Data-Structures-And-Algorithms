@@ -35,19 +35,19 @@ void Display(Node *k){
 // creating a cycle in list
 void MakeCycle(Node *k, int n)
 {
-    Node *start = k, *q;
+    Node *start = k;
     int ind = 0;
-    while (k != NULL)
+    while (k->next!= NULL)
     {
         ind++;
         if (ind == n)
         {
             start = k;
         }
-        q = k;
+        
         k = k->next;
     }
-    q->next = start;
+    k->next = start;
 }
 
 bool CheckCycle(Node *k)
@@ -69,8 +69,6 @@ int main()
 {
     int a[] = {1, 2, 3, 4, 5, 7};
     Create(a, 6);
-    // Display(P);
-
     MakeCycle(P, 7);
     // Display(P);
     cout << CheckCycle(P);
