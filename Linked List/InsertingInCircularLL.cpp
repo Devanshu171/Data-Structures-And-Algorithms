@@ -48,22 +48,29 @@ void Insert(Node *k, int x, int n)
     }
     if (n == 0)
     {
+
+        if (P == NULL) // in case of empty list
+        {
+            P = temp;
+            temp->next = P;
+            return;
+        }
         while (k->next != P)
         {
             k = k->next;
         }
         k->next = temp;
         temp->next = P;
-        P = temp;  // moving head is optional as its circular
+        P = temp; // moving head is optional as its circular
         return;
     }
-    while (ind != n)   // moving k one node back to given position
+    while (ind != n) // moving k one node back to given position
     {
         ind++;
         k = k->next;
     }
     temp->next = k->next; // make new node point to what previous node was pointing
-    k->next = temp;         // make new previous node point to new 
+    k->next = temp;       // make new previous node point to new
 }
 int main()
 {
