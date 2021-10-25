@@ -47,6 +47,11 @@ void Delete(Node *k, int n)
         {
             k = k->next;
         }
+        if(k->next==P)  // if only one node is present
+        {
+            delete k;
+            P=NULL;
+        }
         P = P->next;
         k->next = P;
         delete q;
