@@ -90,13 +90,24 @@ void Revers2(Node *k)
         P=q;
 
 }
+// recursive function to revers a list
+void Revers3(Node *q,Node *k)
+{
+    if(k!=NULL)
+    {
+        Revers3(k,k->next);
+        k->next=q;
+    }
+    else
+    P=q;
+}
 int main()
 {
     int a[] = {1, 2, 3, 4, 5, 6};
     create(a, 6);
     cout << "Before Reversing" << endl;
     Display(P);
-    Revers2(P);
+    Revers3(NULL,P);
     cout << "After Rotation" << endl;
     Display(P);
 
