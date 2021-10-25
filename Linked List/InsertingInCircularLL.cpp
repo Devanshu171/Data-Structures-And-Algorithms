@@ -54,7 +54,7 @@ void Insert(Node *k, int x, int n)
         }
         k->next = temp;
         temp->next = P;
-        P = temp;
+        P = temp;  // moving head is optional as its circular
         return;
     }
     while (ind != n)   // moving k one node back to given position
