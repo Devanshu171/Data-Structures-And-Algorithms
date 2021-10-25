@@ -47,10 +47,11 @@ void Delete(Node *k, int n)
         {
             k = k->next;
         }
-        if(k->next==P)  // if only one node is present
+        if (k->next == k) // if only one node is present
         {
             delete k;
-            P=NULL;
+            P = NULL;
+            return;
         }
         P = P->next;
         k->next = P;
@@ -58,27 +59,25 @@ void Delete(Node *k, int n)
         return;
     }
 
-    int ind = 0;
-    while (k->next != P)
+    int ind = 1;
+
+    while (ind != n)
     {
         ind++;
-        if (ind == n)
-        {
-            q->next = k->next;
-            delete k;
-            return;
-        }
         q = k;
         k = k->next;
     }
-    cout << "positon not present";
+    q->next = k->next;
+    delete k;
+    return;
 }
+
 int main()
 {
     int a[] = {1, 2, 3, 4, 5, 6};
     Create(a, 6);
     Display(P);
-    Delete(P, 1);
+    Delete(P, 6);
     Display(P);
     return 0;
 }
