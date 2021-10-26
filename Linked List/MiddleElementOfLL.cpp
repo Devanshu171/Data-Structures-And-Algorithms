@@ -62,8 +62,8 @@ int FindMidd(Node *k)
 }
 int main()
 {
-    int a[] = {1, 2, 3, 4, 5, 6, 7, 8};
-    Create(a, 8);
+    int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    Create(a, 9);
     cout << FindMiddle(P);
     cout << FindMidd(P);
     return 0;
