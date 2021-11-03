@@ -1,3 +1,6 @@
+// code for 3 priorities
+
+
 #include <iostream>
 using namespace std;
 struct Node
