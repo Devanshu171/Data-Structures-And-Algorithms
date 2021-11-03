@@ -62,6 +62,12 @@ public:
             return arr[rare];
             
     }
+    void display(){
+        for(int i=front+1;i<=rare;i++){
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+    }
 };
 int main()
 {
@@ -73,7 +79,7 @@ int main()
     q.push(5);
     q.push(6);
     // q.push(6);
-
+    q.display();
     cout << q.first() << endl;
     q.pop();
     cout << q.first() << endl;
